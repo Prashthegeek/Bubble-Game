@@ -1,140 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Electricity Payment Form</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    margin-top: 50px;
-    padding: 0;
-    background-color:#2F4F4F; 
-  }
-
-  form {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color:#333;
-    color:  #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  select,
-  input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-
-  button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-
-  button:hover {
-    background-color: #0056b3;
-  }
-
-  @media (max-width: 600px) {
-    form {
-      max-width: 100%; /* Adjust to fit smaller screens */
-    }
-  }
-
-
-  </style>
+    </div>`;
 </head>
 <body>
-  <form id="electricityForm">
-    <label for="state">State:</label>
-    <select id="state" onchange="handleStateChange()">
-      <option value="">Select State</option>
-      <!-- other Options will be dynamically added here using js -->
-    </select>
-
-    <div id="electricityBoardContainer" style="display:none;">
-      <label for="electricityBoard">Electricity Board:</label>
-      <input type="text" id="electricityBoard" onchange="handleElectricityBoardChange()">
+    <div id="main">
+        <div id="panel">
+            <div id="panel-top">
+                <div class="score">
+                    <h2>Hit</h2>
+                    <div id = "hit" class="score-box" >0</div>
+                </div>
+                <div  class="score">
+                    <h2>Timer</h2>
+                    <div id="timer" class="score-box">60</div>
+                </div>
+                <div class="score">
+                    <h2>Score</h2>
+                    <div id="scrBox" class="score-box">0</div>
+                </div>
+            </div>
+            <div id="panel-btm">
+                
+            </div>
+            
+            
+        </div>
     </div>
-
-    <div id="consumerIdContainer" style="display:none;">
-      <label for="consumerId">Consumer ID:</label>
-      <input type="text" id="consumerId">
-    </div>
-
-    <div id="phoneNumberContainer" style="display:none;">
-      <label for="phoneNumber">Phone Number:</label>
-      <input type="text" id="phoneNumber">
-    </div>
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <script>
-    // Your JavaScript logic goes here
-    document.addEventListener("DOMContentLoaded", function() {
-      // Fetch state data from your custom API
-      fetch('http://localhost:3000/states.json')
-        .then(response => response.json())
-        .then(data => {
-          const stateDropdown = document.getElementById('state');
-
-          // Populate the dropdown with state names
-          data.states.forEach(state => {
-            const option = document.createElement('option');
-            option.value = state;
-            option.textContent = state;
-            stateDropdown.appendChild(option);
-          });
-        })
-        .catch(error => console.error('Error fetching state data:', error));
-    });
-
-    function handleStateChange() {
-      // Logic to show/hide electricity board input based on state selection
-      const stateDropdown = document.getElementById('state');
-      const electricityBoardContainer = document.getElementById('electricityBoardContainer');
-
-      if (stateDropdown.value !== '') {
-        electricityBoardContainer.style.display = 'block';
-      } else {
-        electricityBoardContainer.style.display = 'none';
-      }
-    }
-
-    function handleElectricityBoardChange() {
-      // Logic to show/hide consumer ID and phone number inputs based on electricity board selection
-      const electricityBoardInput = document.getElementById('electricityBoard');
-      const consumerIdContainer = document.getElementById('consumerIdContainer');
-      const phoneNumberContainer = document.getElementById('phoneNumberContainer');
-
-      if (electricityBoardInput.value !== '') {
-        consumerIdContainer.style.display = 'block';
-        phoneNumberContainer.style.display = 'block';
-      } else {
-        consumerIdContainer.style.display = 'none';
-        phoneNumberContainer.style.display = 'none';
-      }
-    }
-  </script>
+    	<!-- document.querySelector("#panel-btm").innerHTML=`<div id="gmo">
+        <h1>Game Over</h1>
+        <button id="btn">Play again</button> -->
+    <script src="script.js"></script>
 </body>
 </html>

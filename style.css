@@ -1,0 +1,206 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Gilroy';
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    
+}
+
+#main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(1, 41, 41);
+    height: 100%;
+    width: 100%;
+}
+#panel{
+    background-color: azure;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+    overflow: hidden;  
+}
+#panel-top{
+    padding: 0 15%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    background-color: rgb(2, 12, 50);
+    
+    width: 100%;
+    height: 100px;
+    
+    color:aliceblue
+}
+.score{
+    
+    display: flex;
+    gap:1.5rem;
+    align-items: center;
+}
+.score-box{
+    color: #000;
+    font-size: 2rem;
+    background-color: rgb(215, 215, 232);
+    padding: 1rem 2rem;
+    border-radius:20%;
+
+    
+}
+
+.score h2{
+    font-size: 2.71rem;
+}
+
+#panel-btm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:wrap;
+    gap: 10px;
+    width: 100%;
+    height: calc(100% - 100px);
+    background-color: rgb(217, 200, 200);
+    padding: 20px;
+
+}
+
+.bubble{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(1, 52, 8);
+    opacity: 0.8;
+    border-radius: 50%;
+    font-size: 25px;
+    color: aliceblue;
+}
+
+.bubble:hover{
+    background-color: rgb(144, 172, 3);
+    cursor: pointer;
+}
+#gmo{
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+#gmo h1{
+    font-size: 100px;
+    font-weight: 700;
+    color: rgb(219, 19, 12);
+    text-shadow: rgb(41, 72, 2) 1px 0 20px;;
+    
+}
+#gmo button{
+    padding: 1rem 2.7rem;
+    margin-top: 3rem;
+    /* height: 2.2rem;
+    width: 3rem; */
+    font-weight: 700;
+    background-color: rgb(2, 12, 50);
+    color:floralwhite;
+    border-radius: 1rem;
+    
+}
+#gmo button:hover{
+    
+    background-color: rgb(7, 30, 120);;
+    color:floralwhite;
+}
+.hidden{
+    visibility: hidden;
+}
+
+@media(max-width:1108px){
+    #panel{
+        background-color: rgb(217, 200, 200);
+        overflow: scroll;  
+    }
+    #panel-top{
+        padding:0 2rem;
+        
+    }
+    .score{
+    
+        
+        gap:1rem;
+        
+    }
+    .score-box{
+        color: #000;
+        font-size: 1rem;
+        background-color: rgb(215, 215, 232);
+        padding: 0.5rem 0.7rem;
+        border-radius:20%;
+        margin-right: 20px;
+    }
+    .score h2{
+        font-size: 1.7rem;
+    }
+    #gmo{
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #gmo h1{
+        font-size: 60px;
+        font-weight: 700;
+        color: rgb(219, 19, 12);
+        text-shadow: rgb(41, 72, 2) 1px 0 20px;;
+        
+    }
+    #gmo button{
+        padding: 1rem 2.7rem;
+        margin-top: 3rem;
+        /* height: 2.2rem;
+        width: 3rem; */
+        font-weight: 700;
+        background-color: rgb(2, 12, 50);
+        color:floralwhite;
+        border-radius: 1rem;
+        
+    }
+    #gmo button:hover{
+        background-color: rgb(7, 30, 120);;
+        color:floralwhite;
+    }
+
+}
+
+@media(max-width:526px){
+    #panel{
+        background-color: rgb(217, 200, 200);
+        overflow: scroll;  
+    }
+    #panel-top{
+        height: 150px;
+        padding: 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+    #hit{
+        position: relative;
+        left: 1.1rem;
+    }
+    #scrBox{
+        position: relative;
+        left: 0.2rem;
+    }
+    #gmo h1{
+        font-size:2.25rem;
+    }
+}
